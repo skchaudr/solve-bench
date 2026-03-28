@@ -1,0 +1,33 @@
+from typing import List
+
+class Solution:
+    def partition(self, s: str) -> List[List[str]]:
+        res = []
+        part = []
+        n = len(s)
+
+        # Precompute palindromes
+        dp = [[False] * n for _ in range(n)]
+
+        for i in range(n):
+            dp[i][i] = True
+
+        for length in range(2, n + 1):
+            for i in range(n - length + 1):
+                j = i + length - 1
+                if s[i] == s[j]:
+                    if length == 2 or dp[i + 1][j - 1]:
+                        dp[i][j] = True
+
+        def dfs(i):
+            if i >= n:
+                res.append(part.copy())
+                return
+            for j in range(i, n):
+                if dp[i][j]:
+                    part.append(s[i:j+1])
+                    dfs(j + 1)
+                    part.pop()
+
+        dfs(0)
+        return res
