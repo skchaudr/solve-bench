@@ -55,7 +55,7 @@ def call_gemini_analyzer(code: str) -> dict:
     vertexai.init(project=GCP_PROJECT, location=GCP_REGION)
     model = GenerativeModel("gemini-2.5-pro")
     response = model.generate_content(
-        ANALYZER_SYSTEM.format(code=strip_fences(code)),
+        ANALYZER_SYSTEM.replace("{code}", strip_fences(code)),
         generation_config=GenerationConfig(
             response_mime_type="application/json",
             max_output_tokens=1024,

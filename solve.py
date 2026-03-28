@@ -72,14 +72,14 @@ def get_problem(problem_id: str) -> dict:
 
 
 def call_gemini(prompt: str) -> dict:
-    import vertexai
-    from vertexai.generative_models import GenerativeModel, GenerationConfig
+    from google import genai
+    from google.genai import types
 
-    vertexai.init(project=GCP_PROJECT, location=GCP_REGION)
-    model = GenerativeModel("gemini-2.5-pro")
-    response = model.generate_content(
-        SOLVER_SYSTEM.format(problem=prompt),
-        generation_config=GenerationConfig(
+    client = genai.Client(vertexai=True, project=GCP_PROJECT, location="global")
+    response = client.models.generate_content(
+        model="gemini-3.1-pro-preview",
+        contents=SOLVER_SYSTEM.replace("{problem}", prompt),
+        config=types.GenerateContentConfig(
             response_mime_type="application/json",
             max_output_tokens=8192,
         ),
@@ -90,11 +90,11 @@ def call_gemini(prompt: str) -> dict:
 def call_claude(prompt: str) -> dict:
     from anthropic import AnthropicVertex
 
-    client = AnthropicVertex(project_id=GCP_PROJECT, region=GCP_REGION)
+    client = AnthropicVertex(project_id=GCP_PROJECT, region="global")
     message = client.messages.create(
-        model="claude-opus-4-6@20250514",
+        model="claude-sonnet-4-6",
         max_tokens=8192,
-        messages=[{"role": "user", "content": SOLVER_SYSTEM.format(problem=prompt)}],
+        messages=[{"role": "user", "content": SOLVER_SYSTEM.replace("{problem}", prompt)}],
     )
     return parse_response(message.content[0].text)
 
@@ -109,17 +109,19 @@ def call_gpt(prompt: str) -> dict:
     response = client.chat.completions.create(
         model="gpt-4o",
         response_format={"type": "json_object"},
-        messages=[{"role": "user", "content": SOLVER_SYSTEM.format(problem=prompt)}],
+        messages=[{"role": "user", "content": SOLVER_SYSTEM.replace("{problem}", prompt)}],
         max_tokens=8192,
     )
     return parse_response(response.choices[0].message.content)
 
 
 MODELS = {
-    "gemini": call_gemini,
-    "claude": call_claude,
-    "gpt-4o": call_gpt,
+    "gemini": call_gemini,    # gemini-3.1-pro-preview (Vertex AI)
+    "claude": call_claude,    # claude-sonnet-4-6 (Vertex AI / Anthropic)
+    "gpt-4o": call_gpt,       # placeholder — swap for any Model Garden model
 }
+
+DEFAULT_MODELS = ["gemini", "claude"]
 
 
 def insert_run(problem_id: str, model: str, result: dict, error: str | None = None) -> str:
@@ -191,7 +193,7 @@ def main():
         "--models",
         nargs="+",
         choices=list(MODELS.keys()),
-        default=list(MODELS.keys()),
+        default=DEFAULT_MODELS,
     )
     args = parser.parse_args()
     solve(args.problem_id, args.models)
