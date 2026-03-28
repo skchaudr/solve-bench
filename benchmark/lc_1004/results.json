@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1004",
+  "title": "Max Consecutive Ones III",
+  "topic": "Sliding Window",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.03559,
+      "peak_memory_kb": 0.09
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.42115,
+      "peak_memory_kb": 0.21
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 4.43695,
+      "peak_memory_kb": 0.21
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 44.82092,
+      "peak_memory_kb": 0.21
+    }
+  ],
+  "empirical_time_complexity": "O(n)",
+  "empirical_space_complexity": "O(1)",
+  "notes": "Runtime increases roughly 10x for each 10x increase in n, indicating O(n) empirical time complexity. Space stays constant, indicating O(1) space complexity."
+}
