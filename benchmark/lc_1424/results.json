@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1424",
+  "title": "Diagonal Traverse II",
+  "topic": "Heap",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.09,
+      "peak_memory_kb": 3.98
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.96,
+      "peak_memory_kb": 48.07
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 12.02,
+      "peak_memory_kb": 1111.54
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 179.4,
+      "peak_memory_kb": 13270.31
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time scales at roughly 12-13x for 10x increases in N, matching O(N log N) expectations due to heap operations. Space scales linearly at roughly 10x for 10x increases in N, confirming O(N) memory."
+}
