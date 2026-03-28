@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1039",
+  "title": "Minimum Score Triangulation of Polygon",
+  "topic": "Dynamic Programming",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 38.8,
+      "peak_memory_kb": 235.2
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.0,
+      "peak_memory_kb": 0.0
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 0.0,
+      "peak_memory_kb": 0.0
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 0.0,
+      "peak_memory_kb": 0.0
+    }
+  ],
+  "empirical_time_complexity": "O(N^3)",
+  "empirical_space_complexity": "O(N^2)",
+  "notes": "Time scales cubically with n due to three nested loops checking subproblems. Space scales quadratically with n because of the 2D DP table. n=1,000 and above timeout/OOM."
+}
