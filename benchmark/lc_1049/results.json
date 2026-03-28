@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1049",
+  "title": "Last Stone Weight II",
+  "topic": "Dynamic Programming",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.199,
+      "peak_memory_kb": 2.09
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 2.906,
+      "peak_memory_kb": 20.156
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 149.683,
+      "peak_memory_kb": 197.695
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 20913.399,
+      "peak_memory_kb": 1975.879
+    }
+  ],
+  "empirical_time_complexity": "O(N^2)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Since max sum is S <= 100 * N, the number of bits required scales linearly with N. Bitwise operations on Python's arbitrary precision integers take O(bits), so each step takes O(N). Across N steps, overall time complexity approaches O(N^2). Empirical measurements verify space scales linearly O(N)."
+}
