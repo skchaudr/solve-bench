@@ -49,17 +49,12 @@ def strip_fences(text: str) -> str:
 
 
 def call_gemini_analyzer(code: str) -> dict:
-    import vertexai
-    from vertexai.generative_models import GenerativeModel, GenerationConfig
+    from google import genai
 
-    vertexai.init(project=GCP_PROJECT, location=GCP_REGION)
-    model = GenerativeModel("gemini-2.5-pro")
-    response = model.generate_content(
-        ANALYZER_SYSTEM.replace("{code}", strip_fences(code)),
-        generation_config=GenerationConfig(
-            response_mime_type="application/json",
-            max_output_tokens=1024,
-        ),
+    client = genai.Client(vertexai=True, project=GCP_PROJECT, location="global")
+    response = client.models.generate_content(
+        model="gemini-3.1-pro-preview",
+        contents=ANALYZER_SYSTEM.replace("{code}", strip_fences(code)),
     )
     return json.loads(strip_fences(response.text))
 
@@ -72,7 +67,7 @@ def get_pending_runs(run_id: str | None) -> list[tuple]:
             ).fetchall()
         else:
             rows = conn.execute(
-                "SELECT id, solution_code FROM runs WHERE time_complexity IS NULL AND solution_code != ''"
+                "SELECT id, solution_code FROM runs WHERE (time_complexity IS NULL OR time_complexity = '' OR time_complexity = 'ERROR') AND solution_code != ''"
             ).fetchall()
     return rows
 

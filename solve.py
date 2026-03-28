@@ -88,9 +88,12 @@ def call_gemini(prompt: str) -> dict:
 
 
 def call_claude(prompt: str) -> dict:
-    from anthropic import AnthropicVertex
+    import anthropic
 
-    client = AnthropicVertex(project_id=GCP_PROJECT, region="global")
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key:
+        raise EnvironmentError("ANTHROPIC_API_KEY not set.")
+    client = anthropic.Anthropic(api_key=api_key)
     message = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=8192,
