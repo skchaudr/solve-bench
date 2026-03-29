@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1237",
+  "title": "Find Positive Integer Solution for a Given Equation",
+  "topic": "Two Pointers",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.1687,
+      "peak_memory_kb": 7.8594
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 3.569,
+      "peak_memory_kb": 121.0156
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 52.2125,
+      "peak_memory_kb": 1390.8594
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 628.5903,
+      "peak_memory_kb": 14043.0156
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Both time and space scale linearly by roughly 10x for each 10x increase in n. The linear space complexity is driven by the output size; there are exactly n-1 valid pairs added to the result list in our stress test data, meaning O(N) space is required to store the answer."
+}
