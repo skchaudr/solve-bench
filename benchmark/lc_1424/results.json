@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1424",
+  "title": "Diagonal Traverse II",
+  "topic": "Heap",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.28,
+      "peak_memory_kb": 3.75
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.91,
+      "peak_memory_kb": 22.88
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 24.5,
+      "peak_memory_kb": 261.64
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 315.79,
+      "peak_memory_kb": 2459.26
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Grouping elements by r + c results in O(N) operations and space where N is the total number of elements. Time complexity shows a rough x10 scaling when N scales by x10 (e.g., from 10k to 100k it scales from 24ms to 308ms). The peak memory also perfectly scales by a factor of 10."
+}

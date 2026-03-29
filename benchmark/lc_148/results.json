@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_148",
+  "title": "Sort List",
+  "topic": "Two Pointers",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.42,
+      "peak_memory_kb": 0.19
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 4.8,
+      "peak_memory_kb": 0.28
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 91.46,
+      "peak_memory_kb": 0.26
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 1252.41,
+      "peak_memory_kb": 0.28
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(1)",
+  "notes": "The timing ratio between 1k and 10k is ~19x, and between 10k and 100k is ~13.7x, which fits an O(N log N) growth rate well. Memory consumption remains strictly flat around 0.28 KB for large inputs as our bottom-up merge sort operates completely in-place, thus confirming the empirical O(1) space complexity requested by the problem follow-up."
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1248",
+  "title": "Count Number of Nice Subarrays",
+  "topic": "Sliding Window",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.0152,
+      "peak_memory_kb": 0.33
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.4413,
+      "peak_memory_kb": 0.42
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 6.4052,
+      "peak_memory_kb": 0.42
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 66.0031,
+      "peak_memory_kb": 0.43
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(1)",
+  "notes": "The timing ratio increases by approximately 10x for each 10x increase in n, indicating a linear O(N) time complexity. The peak memory usage remains constant around 0.4 KB regardless of the input size, indicating O(1) space complexity."
+}

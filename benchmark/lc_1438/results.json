@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1438",
+  "title": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
+  "topic": "Heap",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.901,
+      "peak_memory_kb": 8.4
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 8.975,
+      "peak_memory_kb": 25.6
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 111.312,
+      "peak_memory_kb": 11.7
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 1612.341,
+      "peak_memory_kb": 13.6
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "The timing ratio increases slightly faster than linear, consistent with an O(N log N) algorithm where each element is pushed to and lazily popped from a heap. The memory scales in proportion to the number of elements in the heap."
+}

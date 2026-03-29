@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_133",
+  "title": "Clone Graph",
+  "topic": "Graph",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.54,
+      "peak_memory_kb": 23.24
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 5.26,
+      "peak_memory_kb": 214.83
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 65.22,
+      "peak_memory_kb": 2042.18
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 792.68,
+      "peak_memory_kb": 22572.11
+    }
+  ],
+  "empirical_time_complexity": "O(V + E)",
+  "empirical_space_complexity": "O(V + E)",
+  "notes": "Time and space scale linearly with V+E. The graph representation is O(V+E) in size."
+}

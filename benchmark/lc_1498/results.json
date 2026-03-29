@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1498",
+  "title": "Number of Subsequences That Satisfy the Given Sum Condition",
+  "topic": "Two Pointers",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.687,
+      "peak_memory_kb": 4.023
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 10.312,
+      "peak_memory_kb": 39.246
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 118.907,
+      "peak_memory_kb": 390.816
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 1247.581,
+      "peak_memory_kb": 3906.410
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "The time complexity is O(N log N) because of the initial sorting of the array. Precomputing powers of 2 takes O(N) time, and the two-pointer traversal takes O(N) time. Overall, sorting dominates. The 10x increases in N roughly lead to slightly more than 10x increases in time (from 118ms to 1247ms), which aligns well with O(N log N) empirical measurements. The space complexity is O(N) due to the array used for precomputing powers of 2 (peak memory scales linearly: 4 KB -> 39 KB -> 390 KB -> 3906 KB)."
+}

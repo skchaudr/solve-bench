@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_142",
+  "title": "Linked List Cycle II",
+  "topic": "Two Pointers",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.0068,
+      "peak_memory_kb": 0.0
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.1227,
+      "peak_memory_kb": 0.0
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 0.6943,
+      "peak_memory_kb": 0.0
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 4.6412,
+      "peak_memory_kb": 0.0
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(1)",
+  "notes": "Empirical scaling ratio for time: 6.68x for 10x N. Space scales by: 0.00x for 10x N."
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1471",
+  "title": "The k Strongest Values in an Array",
+  "topic": "Two Pointers",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.04911181144416332,
+      "peak_memory_kb": 0.8828125
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.4055535886436701,
+      "peak_memory_kb": 8.875
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 2.4971842067316175,
+      "peak_memory_kb": 39.046875
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 59.700010903179646,
+      "peak_memory_kb": 695.5
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "The time complexity is O(N log N) dominated by sorting the array before finding the median and executing the two pointers logic. The empirical data shows a scaling factor slightly greater than linear. The memory complexity scales linearly O(N), reflecting the auxiliary space used by Python's Timsort and the resulting output array."
+}

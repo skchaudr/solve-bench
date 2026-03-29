@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1035",
+  "title": "Uncrossed Lines",
+  "topic": "Dynamic Programming",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.44,
+      "peak_memory_kb": 13.97
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 4.97,
+      "peak_memory_kb": 132.36
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 56.44,
+      "peak_memory_kb": 1225.89
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 784.2,
+      "peak_memory_kb": 12006.8
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time scales at slightly worse than O(N), fitting O(N log N) well given the 10x scale increases yielding roughly 11-16x time increases (0.44 -> 5.14 -> 56.3 -> 925 ms). Memory scales linearly strictly by 10x with each order of magnitude increase (14 -> 132 -> 1226 -> 12007 KB), fitting O(N)."
+}

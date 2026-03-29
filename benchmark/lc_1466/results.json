@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1466",
+  "title": "Reorder Routes to Make All Paths Lead to the City Zero",
+  "topic": "Graph",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.46577433334012613,
+      "peak_memory_kb": 22.3203125
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 5.870522333339068,
+      "peak_memory_kb": 201.828125
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 103.61067966667292,
+      "peak_memory_kb": 2035.53125
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 1253.4271603333214,
+      "peak_memory_kb": 21428.09375
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Both time and space complexity scale linearly with N (O(N) since edges = N - 1) because the algorithm traverses all edges once via BFS, and stores the graph as an adjacency list."
+}

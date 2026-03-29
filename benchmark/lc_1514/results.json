@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1514",
+  "title": "Path with Maximum Probability",
+  "topic": "Graph",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 1.768,
+      "peak_memory_kb": 44.609
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 19.717,
+      "peak_memory_kb": 429.598
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 252.81,
+      "peak_memory_kb": 4194.16
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 3076.672,
+      "peak_memory_kb": 44132.504
+    }
+  ],
+  "empirical_time_complexity": "O(E log V)",
+  "empirical_space_complexity": "O(E + V)",
+  "notes": "Dijkstra's algorithm. Time complexity scales with edges, bounded by priority queue insertions. Space complexity scales linearly."
+}

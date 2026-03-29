@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1048",
+  "title": "Longest String Chain",
+  "topic": "Two Pointers",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 2.2846,
+      "peak_memory_kb": 4.9414
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 24.9398,
+      "peak_memory_kb": 38.3145
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 263.2507,
+      "peak_memory_kb": 304.3125
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 3080.3057,
+      "peak_memory_kb": 5632.3184
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time complexity increases by factors of ~10.9x, ~10.5x, and ~11.7x for each 10x increase in N. This slightly supra-linear growth matches O(N log N), primarily driven by the initial sorting of words by length. Space complexity increases roughly linearly (~7.7x, ~7.9x, ~18.5x) corresponding to O(N) memory required for the DP hash map storing maximum chain lengths for each word."
+}

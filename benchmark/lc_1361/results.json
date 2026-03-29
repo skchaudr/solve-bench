@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1361",
+  "title": "Validate Binary Tree Nodes",
+  "topic": "Graph",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.0529,
+      "peak_memory_kb": 2.98
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 1.8214,
+      "peak_memory_kb": 66.02
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 2.9558,
+      "peak_memory_kb": 234.99
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 259.8051,
+      "peak_memory_kb": 8548.58
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "BFS visits each node at most once, and degree counting takes O(N) time. Peak memory includes queue and visited set which scale linearly."
+}

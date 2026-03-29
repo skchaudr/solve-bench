@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1415",
+  "title": "The k-th Lexicographical String of All Happy Strings of Length n",
+  "topic": "Backtracking",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.34,
+      "peak_memory_kb": 1.25
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 2.89,
+      "peak_memory_kb": 10.99
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 29.3,
+      "peak_memory_kb": 105.44
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 292.85,
+      "peak_memory_kb": 1003.69
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time and space scale linearly with n because we construct a string of length n bit by bit. Even with Python's large integer conversions, `bin()` format processes all bits linearly, and memory is proportional to the resulting string length."
+}

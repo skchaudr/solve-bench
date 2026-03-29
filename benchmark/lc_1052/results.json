@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1052",
+  "title": "Grumpy Bookstore Owner",
+  "topic": "Sliding Window",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.17422733333205542,
+      "peak_memory_kb": 0.1640625
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 1.7536100000086208,
+      "peak_memory_kb": 0.24609375
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 40.695551666667974,
+      "peak_memory_kb": 0.26171875
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 385.97455866667474,
+      "peak_memory_kb": 0.26171875
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(1)",
+  "notes": "The time increases roughly linearly with N (10x input size results in approx 10x time). The space complexity is O(1) as the peak memory stays constant regardless of N."
+}

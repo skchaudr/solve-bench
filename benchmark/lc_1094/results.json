@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1094",
+  "title": "Car Pooling",
+  "topic": "Heap",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.39,
+      "peak_memory_kb": 2.54
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 4.33,
+      "peak_memory_kb": 23.98
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 50.211,
+      "peak_memory_kb": 233.49
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 788.888,
+      "peak_memory_kb": 2316.85
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time complexity is O(N log N): N increases by 10x per scale. From N=1k to N=10k, time increases by ~11.6x. From N=10k to N=100k, time increases by ~15.7x, showing slightly super-linear O(N log N) scaling due to sorting and heap operations. Space complexity is O(N) as peak memory increases by exactly ~10x for each 10x increase in N, reflecting the space used by the heap which can store up to N elements."
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1016",
+  "title": "Binary String With Substrings Representing 1 To N",
+  "topic": "Sliding Window",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.7469,
+      "peak_memory_kb": 2.79
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 14.5278,
+      "peak_memory_kb": 10.31
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 242.3776,
+      "peak_memory_kb": 58.66
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 3211.9769,
+      "peak_memory_kb": 785.97
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "The time complexity is O(N * log(N)) as the timing ratios increase by ~15x-19x for each 10x increase in N. This matches theoretical expectations since the outer loop iterates over N characters, and the inner loop checks substrings up to length log_2(N) which scales with log(N). The space complexity is O(N) because the hash set stores up to O(N) unique elements."
+}

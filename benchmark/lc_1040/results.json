@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1040",
+  "title": "Moving Stones Until Consecutive II",
+  "topic": "Sliding Window",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.438,
+      "peak_memory_kb": 0.117
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 8.563,
+      "peak_memory_kb": 3.867
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 91.853,
+      "peak_memory_kb": 39.078
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 1053.675,
+      "peak_memory_kb": 390.492
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time complexity is dominated by the sorting step (O(N log N)), and space complexity is O(N) auxiliary space used by Timsort, as visible from memory metrics which scale linearly. The sliding window step itself is O(N)."
+}

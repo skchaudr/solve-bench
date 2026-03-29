@@ -1,0 +1,14 @@
+{
+  "problem_id": "lc_1023",
+  "title": "Camelcase Matching",
+  "topic": "Two Pointers",
+  "benchmarks": [
+    {"n": 100,    "avg_time_ms": 0.56, "peak_memory_kb": 0.94},
+    {"n": 1000,   "avg_time_ms": 5.50, "peak_memory_kb": 8.69},
+    {"n": 10000,  "avg_time_ms": 56.74, "peak_memory_kb": 83.22},
+    {"n": 100000, "avg_time_ms": 553.74, "peak_memory_kb": 782.25}
+  ],
+  "empirical_time_complexity": "O(N * L)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Both time and space complexity scale linearly with the number of queries N, where L is the maximum string length of the queries. The empirical space complexity accounts for the resulting boolean array of size N."
+}

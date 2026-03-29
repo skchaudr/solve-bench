@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1297",
+  "title": "Maximum Number of Occurrences of a Substring",
+  "topic": "Sliding Window",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.716,
+      "peak_memory_kb": 5.165
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 5.041,
+      "peak_memory_kb": 9.562
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 62.553,
+      "peak_memory_kb": 8.93
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 951.696,
+      "peak_memory_kb": 0.453
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(1)",
+  "notes": "Time complexity scales roughly linearly as n increases by a factor of 10. The time complexity is bounded by O(N * minSize) and since minSize <= 26, it reduces to O(N). Space complexity is theoretically O(N) or bounded by the maximum number of unique strings of length minSize (which is a constant at most 26^minSize), as evidenced by the flat/decreasing memory footprint."
+}

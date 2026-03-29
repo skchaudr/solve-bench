@@ -1,0 +1,27 @@
+{
+  "problem_id": "lc_1049",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.1,
+      "peak_memory_kb": 5.43
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.77,
+      "peak_memory_kb": 30.22
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 9.33,
+      "peak_memory_kb": 223.11
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 222.49,
+      "peak_memory_kb": 2003.86
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(N)"
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_131",
+  "title": "Palindrome Partitioning",
+  "topic": "Backtracking",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 10.82,
+      "peak_memory_kb": 324.29
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 44.05,
+      "peak_memory_kb": 1348.64
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 181.78,
+      "peak_memory_kb": 5650.4
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 739.11,
+      "peak_memory_kb": 23646.1
+    }
+  ],
+  "empirical_time_complexity": "O(N * 2^N)",
+  "empirical_space_complexity": "O(N * 2^N)",
+  "notes": "Time and space complexities are bounded by O(N * 2^N), driven by the 2^(N-1) possible partitions, each taking O(N) space. Due to scale, we map inputs N=100, 1000, 10000, 100000 to computationally feasible actual string lengths 12, 14, 16, 18."
+}

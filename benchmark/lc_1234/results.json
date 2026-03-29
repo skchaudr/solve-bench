@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1234",
+  "title": "Replace the Substring for Balanced String",
+  "topic": "Sliding Window",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.3524183333259619,
+      "peak_memory_kb": 1.265625
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 3.7036786666722796,
+      "peak_memory_kb": 1.3515625
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 34.21009999999569,
+      "peak_memory_kb": 1.5078125
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 339.98922666666925,
+      "peak_memory_kb": 1.5390625
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(1)",
+  "notes": "The timing ratio increases by ~10x as N increases by 10x, strongly indicating an O(N) time complexity. Memory usage remains roughly constant at ~1.5 KB across all input sizes, demonstrating O(1) space complexity since the frequency map size is bounded by 4."
+}

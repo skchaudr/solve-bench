@@ -1,0 +1,24 @@
+Benchmarking n=100...
+  Run 1: 0.52 ms
+  Run 2: 0.56 ms
+  Run 3: 0.53 ms
+  Avg Time: 0.54 ms
+  Peak Mem: 23.24 KB
+Benchmarking n=1000...
+  Run 1: 5.41 ms
+  Run 2: 5.18 ms
+  Run 3: 5.20 ms
+  Avg Time: 5.26 ms
+  Peak Mem: 214.83 KB
+Benchmarking n=10000...
+  Run 1: 65.77 ms
+  Run 2: 65.19 ms
+  Run 3: 64.71 ms
+  Avg Time: 65.22 ms
+  Peak Mem: 2042.18 KB
+Benchmarking n=100000...
+  Run 1: 799.49 ms
+  Run 2: 794.21 ms
+  Run 3: 784.33 ms
+  Avg Time: 792.68 ms
+  Peak Mem: 22572.11 KB

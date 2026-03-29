@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1031",
+  "title": "Maximum Sum of Two Non-Overlapping Subarrays",
+  "topic": "Sliding Window",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.927763333341621,
+      "peak_memory_kb": 0.78125
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 17.693689666676466,
+      "peak_memory_kb": 0.80078125
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 75.2266089999883,
+      "peak_memory_kb": 0.7721354166666666
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 580.555447333334,
+      "peak_memory_kb": 0.74609375
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(1)",
+  "notes": "The timing ratio scales linearly as n increases from 10k to 100k, taking ~10x more time. The space complexity remains constant (~0.8 KB) across all scales since the algorithm only maintains running sums and pointers in O(1) auxiliary space."
+}

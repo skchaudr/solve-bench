@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1268",
+  "title": "Search Suggestions System",
+  "topic": "Heap",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.158,
+      "peak_memory_kb": 0.797
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 1.498,
+      "peak_memory_kb": 3.875
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 16.621,
+      "peak_memory_kb": 39.023
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 187.663,
+      "peak_memory_kb": 390.039
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time scales at roughly O(N log N) mostly dominated by the initial sort of products, increasing slightly more than 10x for each 10x increase in N (e.g. 1.5ms -> 16.6ms -> 187ms). Space scales O(N) increasing by exactly 10x per step, which is primarily due to Python's Timsort requiring O(N) temporary space during sorting."
+}

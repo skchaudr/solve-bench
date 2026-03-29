@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_17",
+  "title": "Letter Combinations of a Phone Number",
+  "topic": "Backtracking",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 5.395,
+      "peak_memory_kb": 221.146
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 162.184,
+      "peak_memory_kb": 3686.305
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 2698.507,
+      "peak_memory_kb": 60475.836
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 42533.018,
+      "peak_memory_kb": 1007721.773
+    }
+  ],
+  "empirical_time_complexity": "O(N * 4^N)",
+  "empirical_space_complexity": "O(N * 4^N)",
+  "notes": "To avoid OOM, standard N scales were mapped to actual sequence lengths of 6, 8, 10, and 12. Between N=6 to N=8 (ΔN=2), 4^2 = 16. The time ratio is ~30x and space ratio is ~16x. Between N=10 and N=12, the time ratio is ~15.7x and space ratio is ~16.6x. This confirms the O(N * 4^N) exponential time and space complexity due to generating combinations of size up to 4 characters per digit."
+}

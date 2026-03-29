@@ -1,0 +1,27 @@
+{
+  "problem_id": "lc_105",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.079,
+      "peak_memory_kb": 8.766
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.719,
+      "peak_memory_kb": 86.172
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 6.521,
+      "peak_memory_kb": 859.609
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 70.603,
+      "peak_memory_kb": 8593.984
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)"
+}

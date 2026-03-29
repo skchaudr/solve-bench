@@ -103,10 +103,7 @@ def create_issue(title: str, body: str, dry_run: bool):
         return True
 
     result = subprocess.run(
-        ["gh", "issue", "create",
-         "--repo", REPO,
-         "--title", title,
-         "--body", body],
+        ["jules", "new", "--repo", REPO, f"{title}\n\n{body}"],
         capture_output=True, text=True
     )
     if result.returncode == 0:

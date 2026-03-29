@@ -1,0 +1,1 @@
+[{"n": 100, "avg_time_ms": 0.5588380000081846, "peak_memory_kb": 0.9375}, {"n": 1000, "avg_time_ms": 5.504269333329148, "peak_memory_kb": 8.6875}, {"n": 10000, "avg_time_ms": 56.73752866666367, "peak_memory_kb": 83.21875}, {"n": 100000, "avg_time_ms": 553.7372640000058, "peak_memory_kb": 782.25}]

@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1239",
+  "title": "Maximum Length of a Concatenated String with Unique Characters",
+  "topic": "Backtracking",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 2.656,
+      "peak_memory_kb": 16.43
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 17.301,
+      "peak_memory_kb": 93.402
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 147.56,
+      "peak_memory_kb": 950.207
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 1081.168,
+      "peak_memory_kb": 4495.949
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time complexity is empirical O(N): A 10x increase in N (from 1k to 10k, and 10k to 100k) results in a ~7-8x increase in execution time. This happens because the heavy backtracking DFS operates on a bounded set of unique bitmasks (max 2^26), so the DFS time is O(1) relative to N. The dominant factor as N scales is the initial O(N) pass to parse the strings and populate the unique masks set. Space complexity is also O(N): peak memory increases by ~5-10x for every 10x increase in N, primarily due to the storage of the input array and the set of unique masks."
+}

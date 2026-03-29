@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1219",
+  "title": "Path with Maximum Gold",
+  "topic": "Backtracking",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.41285933320978074,
+      "peak_memory_kb": 11.6015625
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 4.203873666635142,
+      "peak_memory_kb": 126.0390625
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 48.318828666803405,
+      "peak_memory_kb": 2260.9453125
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 570.0395516669232,
+      "peak_memory_kb": 22609.453125
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "For a single, non-branching path with degree <= 2 (generated to prevent combinatorial explosion), the optimized DFS skips starting at middle nodes, allowing O(N) execution. Empirical timings reflect roughly a 10x increase for each 10x increase in N (e.g., ~50ms to ~500ms from 10k to 100k). Space complexity is O(N) due to maximum DFS recursion depth scaling linearly with N."
+}

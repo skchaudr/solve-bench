@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_143",
+  "title": "Reorder List",
+  "topic": "Two Pointers",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.0118,
+      "peak_memory_kb": 0.0078
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.08,
+      "peak_memory_kb": 0.0
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 0.9171,
+      "peak_memory_kb": 0.0
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 8.6448,
+      "peak_memory_kb": 0.0234
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(1)",
+  "notes": "Time complexity is O(N) because timing ratio for 10x N was 9.43x. Space complexity is O(1) as expected since modifications are done in-place and peak memory is stable."
+}

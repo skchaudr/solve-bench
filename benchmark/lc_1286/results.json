@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1286",
+  "title": "Iterator for Combination",
+  "topic": "Backtracking",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.495,
+      "peak_memory_kb": 1.104
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 4.971,
+      "peak_memory_kb": 1.055
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 47.374,
+      "peak_memory_kb": 1.026
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 471.973,
+      "peak_memory_kb": 0.943
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(1)",
+  "notes": "Time scales linearly with the number of operations N because each next/hasNext takes O(K) where K is a small constant (<=15). Space complexity is O(1) auxiliary space beyond the input data because only the K indices are stored."
+}

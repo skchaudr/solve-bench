@@ -42,20 +42,50 @@ GENERATOR_HINTS = {
 }
 
 
-def get_already_dispatched() -> set[str]:
-    """Check jules remote list for solve-bench sessions and extract problem IDs."""
+def get_jules_sessions() -> dict[str, list[str]]:
+    """Return {'Completed': [...ids], 'Progress': [...ids], ...} for solve-bench sessions."""
     result = subprocess.run(
         ["jules", "remote", "list", "--session"],
         capture_output=True, text=True
     )
-    dispatched = set()
+    sessions: dict[str, list[str]] = {"Completed": [], "Progress": [], "other": []}
     for line in result.stdout.splitlines():
         if "solve-bench" not in line:
             continue
-        match = re.search(r"\[Benchmark\]\s+(lc_\d+)", line)
-        if match:
-            dispatched.add(match.group(1))
-    return dispatched
+        match_id = re.search(r"\[Benchmark\]\s+(lc_\d+)", line)
+        if not match_id:
+            continue
+        pid = match_id.group(1)
+        if "Progress" in line:
+            sessions["Progress"].append(pid)
+        elif "Completed" in line:
+            sessions["Completed"].append(pid)
+        else:
+            sessions["other"].append(pid)
+    return sessions
+
+
+def get_already_dispatched() -> set[str]:
+    """All problem IDs that have any Jules session (regardless of status)."""
+    sessions = get_jules_sessions()
+    return set(sessions["Completed"] + sessions["Progress"] + sessions["other"])
+
+
+def get_available_slots(max_concurrent: int = 15) -> int:
+    """How many new tasks can be dispatched right now."""
+    in_progress = len(get_jules_sessions()["Progress"])
+    return max(0, max_concurrent - in_progress)
+
+
+def wait_for_slots(needed: int, max_concurrent: int = 15, poll_interval: int = 30) -> int:
+    """Block until at least `needed` slots are free. Returns actual available slots."""
+    while True:
+        slots = get_available_slots(max_concurrent)
+        if slots >= needed:
+            return slots
+        in_progress = max_concurrent - slots
+        print(f"  ⏳ {in_progress} tasks In Progress, {slots} slots free (need {needed}) — checking again in {poll_interval}s...", flush=True)
+        time.sleep(poll_interval)
 
 
 def get_all_problems(conn) -> list[dict]:
@@ -166,10 +196,20 @@ def main():
     total_dispatched = 0
     total_confirmed = 0
 
-    for i in range(0, len(remaining), args.batch_size):
-        batch = remaining[i:i + args.batch_size]
-        batch_num = (i // args.batch_size) + 1
-        print(f"── Batch {batch_num} ({len(batch)} problems) ──")
+    batch_num = 0
+    i = 0
+    while i < len(remaining):
+        # Wait until we have at least 1 free slot
+        if not args.dry_run:
+            slots = wait_for_slots(1, poll_interval=30)
+        else:
+            slots = args.batch_size
+
+        # Only dispatch as many as we have slots for, capped at batch_size
+        take = min(args.batch_size, slots, len(remaining) - i)
+        batch = remaining[i:i + take]
+        batch_num += 1
+        print(f"── Batch {batch_num} ({len(batch)} problems, {slots} slots free) ──")
 
         sent = []
         for p in batch:
@@ -182,6 +222,7 @@ def main():
             time.sleep(args.delay)
 
         total_dispatched += len(sent)
+        i += take
 
         if args.dry_run:
             print(f"  [dry run — skipping verification]\n")
@@ -195,13 +236,11 @@ def main():
         if missing:
             print(f"  ⚠️  {len(missing)} tasks dropped: {', '.join(sorted(missing))}")
             print(f"  ✅ {len(confirmed)}/{len(sent)} confirmed\n")
+            # Put dropped ones back in remaining so we retry
+            dropped_problems = [p for p in batch if p["id"] in missing]
+            remaining = remaining[:i] + dropped_problems + remaining[i:]
         else:
             print(f"  ✅ All {len(confirmed)} confirmed\n")
-
-        # Wait for batch to clear before next batch (if there is one)
-        if i + args.batch_size < len(remaining):
-            print(f"  Waiting 10s before next batch...\n")
-            time.sleep(10)
 
     print(f"\nTotal dispatched: {total_dispatched}")
     if not args.dry_run:

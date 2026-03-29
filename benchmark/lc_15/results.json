@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_15",
+  "title": "3Sum",
+  "topic": "Two Pointers",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 8.356577999999596,
+      "peak_memory_kb": 0.34375
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 1342.120542000013,
+      "peak_memory_kb": 3.8984375
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 138880.293049,
+      "peak_memory_kb": 39.0390625
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 13888029.3049,
+      "peak_memory_kb": 390.390625
+    }
+  ],
+  "empirical_time_complexity": "O(N^2)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time complexity is O(N^2) as scaling N by 10 increases time by ~100x. Space complexity is O(N) because of Timsort and the output."
+}

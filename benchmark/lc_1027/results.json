@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1027",
+  "title": "Longest Arithmetic Subsequence",
+  "topic": "Binary Search",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 2.5546200000121644,
+      "peak_memory_kb": 13.0234375
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 11.582650666677333,
+      "peak_memory_kb": 27.5390625
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 27.81880499998124,
+      "peak_memory_kb": 27.5390625
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 39.43552566666616,
+      "peak_memory_kb": 27.5390625
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(1)",
+  "notes": "Time complexity scales effectively linearly O(N) since the max range of sequence differences is constant [0, 500] and the search loop is strongly pruned based on element frequencies. The space complexity is O(1) as memory usage is bounded entirely by the [0, 500] constant value constraints, avoiding N-scaling DP allocations."
+}

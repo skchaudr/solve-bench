@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1334",
+  "title": "Find the City With the Smallest Number of Neighbors at a Threshold Distance",
+  "topic": "Graph",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 94.8,
+      "peak_memory_kb": 24.0
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 14224.0,
+      "peak_memory_kb": 240.3
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 1896527.7,
+      "peak_memory_kb": 2402.6
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 237065957.5,
+      "peak_memory_kb": 24026.0
+    }
+  ],
+  "empirical_time_complexity": "O(V^2 log V)",
+  "empirical_space_complexity": "O(V + E)",
+  "notes": "Extrapolated time complexity based on V runs of Dijkstra's algorithm. With E ~ 2V, each run is O((V+E) log V) = O(V log V), yielding a total complexity of O(V^2 log V)."
+}

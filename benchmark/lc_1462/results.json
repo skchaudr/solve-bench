@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1462",
+  "title": "Course Schedule IV",
+  "topic": "Graph",
+  "empirical_time_complexity": "O(V * E)",
+  "empirical_space_complexity": "O(V^2)",
+  "notes": "Time scales empirically around O(N log N) to O(N^1.5) on this sparse dataset, but worst-case time is O(V^3) or O(V*E) without bitsets. With large ints, it's effectively O(V*E / 64) -> O(N^2) since E~V. Space clearly scales quadratically (10x N -> ~80x memory), so O(V^2).",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 1.3,
+      "peak_memory_kb": 16.0
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 18.0,
+      "peak_memory_kb": 222.4
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 226.9,
+      "peak_memory_kb": 8120.1
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 3714.9,
+      "peak_memory_kb": 667012.2
+    }
+  ]
+}

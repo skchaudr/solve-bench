@@ -1,0 +1,18 @@
+[
+  {
+    "n": 100,
+    "s": "aaaaaaaaaaaa"
+  },
+  {
+    "n": 1000,
+    "s": "aaaaaaaaaaaaaa"
+  },
+  {
+    "n": 10000,
+    "s": "aaaaaaaaaaaaaaaa"
+  },
+  {
+    "n": 100000,
+    "s": "aaaaaaaaaaaaaaaaaa"
+  }
+]
