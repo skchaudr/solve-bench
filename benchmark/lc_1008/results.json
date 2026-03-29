@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1008",
+  "title": "Construct Binary Search Tree from Preorder Traversal",
+  "topic": "Binary Search",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.25,
+      "peak_memory_kb": 10.42
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 2.18,
+      "peak_memory_kb": 93.84
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 23.32,
+      "peak_memory_kb": 937.57
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 264.84,
+      "peak_memory_kb": 9375.07
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time scales linearly, approximately increasing by 10x as N increases by 10x. Space also scales linearly by 10x, corresponding to the memory of the newly allocated tree nodes."
+}
