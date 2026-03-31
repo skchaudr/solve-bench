@@ -75,11 +75,6 @@ def run_bench_with_solution(problem_id: str, solution_code: str, timeout: int = 
     shutil.copy2(solution_path, backup_path)
 
     try:
-        # Wrap in Solution class if model returned a bare function
-        if "class Solution" not in solution_code:
-            indented = "\n".join("    " + line for line in solution_code.splitlines())
-            solution_code = f"class Solution:\n{indented}\n"
-
         # Write model solution
         with open(solution_path, "w") as f:
             f.write(solution_code)
