@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_103",
+  "title": "Binary Tree Zigzag Level Order Traversal",
+  "topic": "Tree",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.02018715950000001,
+      "peak_memory_kb": 4.1484375
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.15845921349999514,
+      "peak_memory_kb": 18.36328125
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 1.82040176000001,
+      "peak_memory_kb": 123.32421875
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 20.006448999998838,
+      "peak_memory_kb": 1070.10546875
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time and space grow linearly with N as each node is visited once and output stores all N nodes. Using deque allows O(1) appends at both ends."
+}

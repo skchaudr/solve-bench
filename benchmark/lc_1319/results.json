@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1319",
+  "title": "Number of Operations to Make Network Connected",
+  "topic": "Graph",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.071,
+      "peak_memory_kb": 1.141
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 1.951,
+      "peak_memory_kb": 31.398
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 26.306,
+      "peak_memory_kb": 382.93
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 359.937,
+      "peak_memory_kb": 3898.555
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Union-Find operations with path compression take nearly constant time \\u03b1(N). Iterating through E edges gives O(E \\u03b1(N)) time. Space is O(N) for parent tracking."
+}

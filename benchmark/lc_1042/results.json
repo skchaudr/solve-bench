@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1042",
+  "title": "Flower Planting With No Adjacent",
+  "topic": "Graph",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.967,
+      "peak_memory_kb": 11.219
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 12.377,
+      "peak_memory_kb": 123.047
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 133.501,
+      "peak_memory_kb": 1368.016
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 1404.897,
+      "peak_memory_kb": 13647.094
+    }
+  ],
+  "empirical_time_complexity": "O(N + E)",
+  "empirical_space_complexity": "O(N + E)",
+  "notes": "Time scales empirically at O(N + E) as 10x N results in approximately 10x run time. Space scales linearly O(N + E) to store the adjacency list."
+}

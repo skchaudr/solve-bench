@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_102",
+  "title": "Binary Tree Level Order Traversal",
+  "topic": "Tree",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.015133987099999757,
+      "peak_memory_kb": 2.203125
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.1321333440000032,
+      "peak_memory_kb": 13.30859375
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 1.4021538949999979,
+      "peak_memory_kb": 94.04296875
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 15.58709189999945,
+      "peak_memory_kb": 845.91796875
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time and space grow linearly with N as each node is visited once and output stores all N nodes."
+}

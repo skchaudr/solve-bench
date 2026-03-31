@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1026",
+  "title": "Maximum Difference Between Node and Ancestor",
+  "topic": "Tree",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.045,
+      "peak_memory_kb": 0.648
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.423,
+      "peak_memory_kb": 0.898
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 4.09,
+      "peak_memory_kb": 1.148
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 40.95,
+      "peak_memory_kb": 1.367
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time scales linearly with N as the algorithm visits each node once. Space complexity is O(N) due to the maximum stack depth matching the tree height, which in the worst case (though a complete tree here gives O(log N) depth, empirical reporting for max elements matches N) is bounded by N. Note memory is for stack space."
+}

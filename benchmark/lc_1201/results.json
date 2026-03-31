@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1201",
+  "title": "Ugly Number III",
+  "topic": "Binary Search",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.43,
+      "peak_memory_kb": 0.641
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.521,
+      "peak_memory_kb": 0.625
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 0.607,
+      "peak_memory_kb": 0.602
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 0.67,
+      "peak_memory_kb": 0.445
+    }
+  ],
+  "empirical_time_complexity": "O(log(MAX_ANS))",
+  "empirical_space_complexity": "O(1)",
+  "notes": "Time complexity is empirical O(log(MAX_ANS)) which remains constant irrespective of 'N' because binary search boundaries are fixed. Space complexity is O(1)."
+}

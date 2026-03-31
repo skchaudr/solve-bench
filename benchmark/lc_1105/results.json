@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1105",
+  "title": "Filling Bookcase Shelves",
+  "topic": "Dynamic Programming",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.695,
+      "peak_memory_kb": 2.477
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 8.311,
+      "peak_memory_kb": 37.816
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 104.796,
+      "peak_memory_kb": 389.316
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 827.147,
+      "peak_memory_kb": 3904.91
+    }
+  ],
+  "empirical_time_complexity": "O(N * W)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "DP array takes O(N) space. Inner loop runs up to the max number of books that fit on a shelf. With bounded shelfWidth, time complexity empirically scales linearly with N."
+}

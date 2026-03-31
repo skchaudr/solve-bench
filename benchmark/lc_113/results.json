@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_113",
+  "title": "Path Sum II",
+  "topic": "Backtracking",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.051388000012290526,
+      "peak_memory_kb": 0.4765625
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.4947186666678741,
+      "peak_memory_kb": 1.3046875
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 5.152994999984155,
+      "peak_memory_kb": 13.0078125
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 51.00927533330454,
+      "peak_memory_kb": 119.9765625
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N log N)",
+  "notes": "Time is O(N) as every node is visited. Space depends on tree shape, typically O(H) for call stack but we track path arrays which max out at O(N log N) space overall for complete trees."
+}

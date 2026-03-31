@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1079",
+  "title": "Letter Tile Possibilities",
+  "topic": "Backtracking",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.023711999972420017,
+      "peak_memory_kb": 0.59375
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.44598299998218255,
+      "peak_memory_kb": 0.765625
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 20.609933333370616,
+      "peak_memory_kb": 1.171875
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 1650.1718510000007,
+      "peak_memory_kb": 1.375
+    }
+  ],
+  "empirical_time_complexity": "O(N!)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Backtracking explores all unique subsets/permutations, leading to factorial time complexity. Space complexity is O(N) due to recursion stack depth and character frequencies. N values mapped down to 3, 5, 7, 9 to avoid timeout."
+}

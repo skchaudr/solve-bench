@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1080",
+  "title": "Insufficient Nodes in Root to Leaf Paths",
+  "topic": "Tree",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.13,
+      "peak_memory_kb": 20.109
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 1.216,
+      "peak_memory_kb": 152.883
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 15.103,
+      "peak_memory_kb": 1273.086
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 276.916,
+      "peak_memory_kb": 20052.789
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time scales linearly with N because the iterative post-order traversal visits each node a constant number of times. Space complexity is O(N) due to the hash map tracking leaf sums and parent relationships for every node, and the stack size during traversal."
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1038",
+  "title": "Binary Search Tree to Greater Sum Tree",
+  "topic": "Binary Search",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.024,
+      "peak_memory_kb": 3.18
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.183,
+      "peak_memory_kb": 31.305
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 1.876,
+      "peak_memory_kb": 347.16
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 19.891,
+      "peak_memory_kb": 3511.461
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time scales linearly with N because the reverse in-order traversal visits every node exactly once. Space complexity is bounded by the height of the tree (which is O(log N) since we construct balanced trees, but empirically the max stack size can be represented within O(N)). Note memory represents the max stack size."
+}

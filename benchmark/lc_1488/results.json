@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1488",
+  "title": "Avoid Flood in The City",
+  "topic": "Heap",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.021527999990667013,
+      "peak_memory_kb": 3.3125
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.25754400000247796,
+      "peak_memory_kb": 38.78125
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 3.3270326666941705,
+      "peak_memory_kb": 504.3125
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 132.01811166665797,
+      "peak_memory_kb": 4929.3671875
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time uses bisect on an array representing dry days, which takes O(log N) for each flood check, and pop from list is O(N) worst case but typical usage depends. We use N log N empirical or N^2 worst case. Space is O(N) for ans and dictionaries."
+}

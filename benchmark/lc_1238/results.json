@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1238",
+  "title": "Circular Permutation in Binary Representation",
+  "topic": "Backtracking",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.012,
+      "peak_memory_kb": 1.039
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.164,
+      "peak_memory_kb": 32.664
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 1.337,
+      "peak_memory_kb": 313.664
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 36.022,
+      "peak_memory_kb": 5201.852
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Here N refers to 2^n, which is the size of the output. The mapped n values are 7, 10, 13, and 17. The time and space grow linearly with 2^n (i.e. O(2^n) in terms of n, but O(N) in terms of benchmark scale N)."
+}

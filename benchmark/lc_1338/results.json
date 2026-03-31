@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1338",
+  "title": "Reduce Array Size to The Half",
+  "topic": "Heap",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.03,
+      "peak_memory_kb": 0.648
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.099,
+      "peak_memory_kb": 6.852
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 1.563,
+      "peak_memory_kb": 54.227
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 19.999,
+      "peak_memory_kb": 432.227
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Counting frequencies is O(N) time and O(U) space. Sorting the frequencies is O(U log U), where U is unique elements. Space is O(U) bounded by O(N)."
+}

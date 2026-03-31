@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1024",
+  "title": "Video Stitching",
+  "topic": "Dynamic Programming",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.097,
+      "peak_memory_kb": 3.602
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 1.115,
+      "peak_memory_kb": 78.438
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 14.124,
+      "peak_memory_kb": 820.977
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 272.442,
+      "peak_memory_kb": 8199.555
+    }
+  ],
+  "empirical_time_complexity": "O(N log N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Sorting takes O(N log N). Space is O(N) due to sort/Timsort in Python."
+}

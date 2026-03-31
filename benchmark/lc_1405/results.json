@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1405",
+  "title": "Longest Happy String",
+  "topic": "Heap",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.06177866667182268,
+      "peak_memory_kb": 0.9814453125
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.11089333332847673,
+      "peak_memory_kb": 1.8173828125
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 5.467107666665545,
+      "peak_memory_kb": 92.9619140625
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 57.643523333335146,
+      "peak_memory_kb": 873.720703125
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time grows linearly with N. Space is also linear to store the result string."
+}

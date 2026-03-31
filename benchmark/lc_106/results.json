@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_106",
+  "title": "Construct Binary Tree from Inorder and Postorder Traversal",
+  "topic": "Tree",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.07211140840000212,
+      "peak_memory_kb": 8.6640625
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.7798934479999957,
+      "peak_memory_kb": 86.0078125
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 10.503110750001099,
+      "peak_memory_kb": 859.4453125
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 88.25300999999968,
+      "peak_memory_kb": 8593.8203125
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time and space grow linearly with N. The iterative approach constructs the tree in O(N) time using O(N) space for the stack and tree nodes."
+}

@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_109",
+  "title": "Convert Sorted List to Binary Search Tree",
+  "topic": "Binary Search",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.089,
+      "peak_memory_kb": 10.188
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 0.952,
+      "peak_memory_kb": 95.551
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 9.464,
+      "peak_memory_kb": 943.801
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 102.714,
+      "peak_memory_kb": 9377.137
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time scales linearly with N because we iterate the list to extract values, and then iteratively construct the BST visiting each node once. Space complexity is O(N) due to the intermediate array of values and the stack during construction."
+}

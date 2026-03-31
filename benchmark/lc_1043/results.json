@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1043",
+  "title": "Partition Array for Maximum Sum",
+  "topic": "Dynamic Programming",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 2.657,
+      "peak_memory_kb": 4.461
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 38.836,
+      "peak_memory_kb": 43.191
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 391.488,
+      "peak_memory_kb": 429.906
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 3910.391,
+      "peak_memory_kb": 4297.098
+    }
+  ],
+  "empirical_time_complexity": "O(N * K)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "DP array takes O(N) space. Inner loop runs up to K times, leading to O(N * K) time complexity. With K=50, empirical time scales linearly with N."
+}

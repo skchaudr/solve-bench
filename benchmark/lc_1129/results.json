@@ -1,0 +1,30 @@
+{
+  "problem_id": "lc_1129",
+  "title": "Shortest Path with Alternating Colors",
+  "topic": "Graph",
+  "benchmarks": [
+    {
+      "n": 100,
+      "avg_time_ms": 0.893,
+      "peak_memory_kb": 28.68
+    },
+    {
+      "n": 1000,
+      "avg_time_ms": 8.164,
+      "peak_memory_kb": 370.57
+    },
+    {
+      "n": 10000,
+      "avg_time_ms": 142.449,
+      "peak_memory_kb": 3090.914
+    },
+    {
+      "n": 100000,
+      "avg_time_ms": 1880.034,
+      "peak_memory_kb": 30001.789
+    }
+  ],
+  "empirical_time_complexity": "O(N)",
+  "empirical_space_complexity": "O(N)",
+  "notes": "Time and space scale linearly with the number of nodes and edges. Since E is O(N) here, it's O(N) overall."
+}
